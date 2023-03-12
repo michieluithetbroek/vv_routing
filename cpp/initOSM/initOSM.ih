@@ -1,0 +1,45 @@
+//
+//  initOSM.ih
+//  vv_routing
+//
+//  Created by Michiel uit het Broek on 12/03/2023.
+//
+// We can also directly select the right header file
+// see https://osmcode.org/libosmium/manual.html#input-and-output
+
+#pragma once
+
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <chrono>
+#include <algorithm>
+
+#include <osmium/osm/node.hpp>
+#include <osmium/osm/way.hpp>
+
+// Functions to read PBF files
+
+#include <osmium/io/pbf_output.hpp>
+#include <osmium/io/pbf_input.hpp>
+
+#include <osmium/index/map/sparse_mem_array.hpp>
+#include <osmium/handler/node_locations_for_ways.hpp>
+
+// Tags are used to filter road types
+
+#include <osmium/tags/taglist.hpp>
+#include <osmium/tags/tags_filter.hpp>
+
+// The Osmium Location contains a longitude and latitude and is usually used inside
+// a node to store its location in the world.
+
+#include <osmium/osm/location.hpp>
+
+// The Osmium Tile class handles tile coordinates and zoom levels.
+
+#include <osmium/geom/tile.hpp>
+
+#include "initOSM.h"
+
+using namespace std;

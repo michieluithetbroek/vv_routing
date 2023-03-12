@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		CC3CB0B129BE2977005C3C60 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC3CB0B029BE2977005C3C60 /* main.cpp */; };
+		CCE14B1729BE3DB900128DCD /* initOSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC3CB0B929BE2FB1005C3C60 /* initOSM.cpp */; };
+		CCE14B1929BE470600128DCD /* nodes_reindex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1829BE46CA00128DCD /* nodes_reindex.cpp */; };
+		CCE14B1B29BE47BB00128DCD /* nodes_make_unique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */; };
+		CCE14B1D29BE49A500128DCD /* print_nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1C29BE49A500128DCD /* print_nodes.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,12 @@
 /* Begin PBXFileReference section */
 		CC3CB0AD29BE2977005C3C60 /* vv_routing */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vv_routing; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC3CB0B029BE2977005C3C60 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CC3CB0B829BE2C2E005C3C60 /* initOSM.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSM.h; sourceTree = "<group>"; };
+		CC3CB0B929BE2FB1005C3C60 /* initOSM.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initOSM.cpp; sourceTree = "<group>"; };
+		CC3CB0BA29BE2FD4005C3C60 /* initOSM.ih */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSM.ih; sourceTree = "<group>"; };
+		CCE14B1829BE46CA00128DCD /* nodes_reindex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = nodes_reindex.cpp; sourceTree = "<group>"; };
+		CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = nodes_make_unique.cpp; sourceTree = "<group>"; };
+		CCE14B1C29BE49A500128DCD /* print_nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_nodes.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +67,23 @@
 		CC3CB0AF29BE2977005C3C60 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
+				CC3CB0B729BE2BFD005C3C60 /* initOSM */,
 				CC3CB0B029BE2977005C3C60 /* main.cpp */,
 			);
 			path = cpp;
+			sourceTree = "<group>";
+		};
+		CC3CB0B729BE2BFD005C3C60 /* initOSM */ = {
+			isa = PBXGroup;
+			children = (
+				CC3CB0B829BE2C2E005C3C60 /* initOSM.h */,
+				CC3CB0B929BE2FB1005C3C60 /* initOSM.cpp */,
+				CC3CB0BA29BE2FD4005C3C60 /* initOSM.ih */,
+				CCE14B1829BE46CA00128DCD /* nodes_reindex.cpp */,
+				CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */,
+				CCE14B1C29BE49A500128DCD /* print_nodes.cpp */,
+			);
+			path = initOSM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC3CB0B129BE2977005C3C60 /* main.cpp in Sources */,
+				CCE14B1729BE3DB900128DCD /* initOSM.cpp in Sources */,
+				CCE14B1B29BE47BB00128DCD /* nodes_make_unique.cpp in Sources */,
+				CCE14B1D29BE49A500128DCD /* print_nodes.cpp in Sources */,
+				CCE14B1929BE470600128DCD /* nodes_reindex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,10 +204,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lexpat",
+					"-lbz2",
+					"-lz",
+					"-lprotobuf",
+					"-lgdal",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -228,9 +265,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lexpat",
+					"-lbz2",
+					"-lz",
+					"-lprotobuf",
+					"-lgdal",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -239,6 +286,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/expat/2.4.7/include,
+					/opt/homebrew/Cellar/bzip2/1.0.8/include,
+					/opt/homebrew/Cellar/protobuf/3.19.4/include,
+					/opt/homebrew/Cellar/gdal/3.4.3_1/include,
+					/opt/homebrew/Cellar/zlib/1.2.12/include,
+					/opt/local/include,
+					"/opt/homebrew/Cellar/libosmium/2.18.0/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"/opt/homebrew/Cellar/bzip2/1.0.8/lib/**",
+					"/opt/homebrew/Cellar/protobuf/3.19.4/lib/**",
+					"/opt/homebrew/Cellar/gdal/3.4.3_1/lib/**",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -247,6 +308,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/Cellar/expat/2.4.7/include,
+					/opt/homebrew/Cellar/bzip2/1.0.8/include,
+					/opt/homebrew/Cellar/protobuf/3.19.4/include,
+					/opt/homebrew/Cellar/gdal/3.4.3_1/include,
+					/opt/homebrew/Cellar/zlib/1.2.12/include,
+					/opt/local/include,
+					"/opt/homebrew/Cellar/libosmium/2.18.0/**",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"/opt/homebrew/Cellar/bzip2/1.0.8/lib/**",
+					"/opt/homebrew/Cellar/protobuf/3.19.4/lib/**",
+					"/opt/homebrew/Cellar/gdal/3.4.3_1/lib/**",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
