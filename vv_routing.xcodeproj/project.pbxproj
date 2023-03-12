@@ -41,7 +41,7 @@
 		CC3CB0A429BE2977005C3C60 = {
 			isa = PBXGroup;
 			children = (
-				CC3CB0AF29BE2977005C3C60 /* vv_routing */,
+				CC3CB0AF29BE2977005C3C60 /* cpp */,
 				CC3CB0AE29BE2977005C3C60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CC3CB0AF29BE2977005C3C60 /* vv_routing */ = {
+		CC3CB0AF29BE2977005C3C60 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
 				CC3CB0B029BE2977005C3C60 /* main.cpp */,
 			);
-			path = vv_routing;
+			path = cpp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
