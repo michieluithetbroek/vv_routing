@@ -59,6 +59,8 @@ struct OSM_handler: public osmium::handler::Handler
         
         osmium::NodeRefList const &nodes = way.nodes();
         
+        string const way_type = way.tags()["highway"];
+        
         size_t const nNodes = nodes.size();
         
         d_nNodes_processed += nNodes;
@@ -93,7 +95,8 @@ struct OSM_handler: public osmium::handler::Handler
                                      node_curr.lon(),
                                      node_curr.lat(),
                                      tile_curr.x,
-                                     tile_curr.y);
+                                     tile_curr.y,
+                                     way_type);
             }
         }
     }

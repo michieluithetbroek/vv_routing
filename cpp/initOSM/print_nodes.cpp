@@ -18,5 +18,6 @@ void InitOSM::print_nodes() const
              << setw(10) << n.lon
              << setw(10) << n.lat
              << setw(8)  << n.tile_x
-             << setw(8)  << n.tile_y << '\n';
+             << setw(8)  << n.tile_y
+             << setw(15) << n.way_type << '\n';
 }

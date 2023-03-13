@@ -12,7 +12,7 @@ void InitOSM::print_nodes_csv() const
     ofstream output_file ("/Users/michiel/Documents/github/vv_routing/cpp/data/nodes.csv");
     
     output_file << fixed << setprecision(4)
-                << "idx_way;idx_node_OSM;idx_node;lon;lat;tile_x;tile_y\n";
+                << "idx_way;idx_node_OSM;idx_node;lon;lat;tile_x;tile_y;way_type\n";
 
     
     for (Node const &n: d_nodes)
@@ -22,5 +22,6 @@ void InitOSM::print_nodes_csv() const
                     << n.lon          << ';'
                     << n.lat          << ';'
                     << n.tile_x       << ';'
-                    << n.tile_y       << '\n';
+                    << n.tile_y       << ';'
+                    << n.way_type     << '\n';
 }
