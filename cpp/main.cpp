@@ -12,4 +12,8 @@
 int main(int argc, const char * argv[])
 {
     InitOSM doei;
+    
+    doei.print_nodes();
+    doei.print_nodes_csv();
+    
 }

@@ -89,6 +89,7 @@ struct OSM_handler: public osmium::handler::Handler
             {
                 d_nodes.emplace_back(node_curr.ref(),
                                      way.id(),
+                                     node_curr.ref(),
                                      node_curr.lon(),
                                      node_curr.lat(),
                                      tile_curr.x,

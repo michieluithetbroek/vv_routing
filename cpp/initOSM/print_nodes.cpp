@@ -13,7 +13,8 @@ void InitOSM::print_nodes() const
 
     for (Node const &n: d_nodes)
         cout << setw(15) << n.idx_way
-             << setw(15) << n.idx_node
+             << setw(15) << n.idx_node_OSM
+             << setw(10) << n.idx_node
              << setw(10) << n.lon
              << setw(10) << n.lat
              << setw(8)  << n.tile_x
