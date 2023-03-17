@@ -9,10 +9,12 @@
 
 #include <vector>
 
-#include <stdio.h>
+#include "./../structs/node.h"
 
 class InitOSRM
 {
+    
+    std::vector<Node> d_nodes;
     
 public:
     

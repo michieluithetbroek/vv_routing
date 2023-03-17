@@ -12,8 +12,10 @@
 
 int main(int argc, const char * argv[])
 {
-    InitOSRM doei;
+    //InitOSM doei;
     
     //doei.print_nodes();
     //doei.print_nodes_csv();
+    
+    InitOSRM step2;
 }
