@@ -41,6 +41,7 @@
 		CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initOSRM.cpp; sourceTree = "<group>"; };
 		CCE14B2429C4A7FC00128DCD /* initOSRM.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.h; sourceTree = "<group>"; };
 		CCE14B2629C4A83400128DCD /* initOSRM.ih */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.ih; sourceTree = "<group>"; };
+		CCE14B2829C4AA9500128DCD /* node.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +74,7 @@
 		CC3CB0AF29BE2977005C3C60 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
+				CCE14B2729C4AA7400128DCD /* structs */,
 				CCE14B2229C4A7E100128DCD /* initOSRM */,
 				CC3CB0B729BE2BFD005C3C60 /* initOSM */,
 				CC3CB0B029BE2977005C3C60 /* main.cpp */,
@@ -102,6 +104,14 @@
 				CCE14B2629C4A83400128DCD /* initOSRM.ih */,
 			);
 			path = initOSRM;
+			sourceTree = "<group>";
+		};
+		CCE14B2729C4AA7400128DCD /* structs */ = {
+			isa = PBXGroup;
+			children = (
+				CCE14B2829C4AA9500128DCD /* node.h */,
+			);
+			path = structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
