@@ -317,18 +317,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					"/opt/homebrew/Cellar/expat/**",
-					"/opt/homebrew/Cellar/bzip2/**",
-					"/opt/homebrew/Cellar/protobuf/**",
-					"/opt/homebrew/Cellar/gdal/**",
-					"/opt/homebrew/Cellar/zlib/**",
+					/opt/homebrew/opt/expat/include,
+					/opt/homebrew/opt/bzip2/include,
+					/opt/homebrew/opt/protobuf/include,
+					/opt/homebrew/opt/gdal/include,
+					/opt/homebrew/opt/zlib/include,
 					"/opt/local/include/**",
-					"/opt/homebrew/Cellar/libosmium/**",
+					/opt/homebrew/opt/libosmium/include,
+					"/opt/homebrew/opt/osrm-backend/include/**",
+					/opt/homebrew/opt/boost/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"/opt/homebrew/Cellar/bzip2/1.0.8/lib/**",
-					"/opt/homebrew/Cellar/protobuf/21.12/lib/**",
-					"/opt/homebrew/Cellar/gdal/3.6.3/lib/**",
+					/opt/homebrew/opt/bzip2/lib,
+					/opt/homebrew/opt/protobuf/lib,
+					/opt/homebrew/opt/gdal/lib,
+					"/opt/homebrew/opt/osrm-backend/lib",
+					/opt/homebrew/opt/boost/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -339,18 +343,22 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					"/opt/homebrew/Cellar/expat/**",
-					"/opt/homebrew/Cellar/bzip2/**",
-					"/opt/homebrew/Cellar/protobuf/**",
-					"/opt/homebrew/Cellar/gdal/**",
-					"/opt/homebrew/Cellar/zlib/**",
+					/opt/homebrew/opt/expat/include,
+					/opt/homebrew/opt/bzip2/include,
+					/opt/homebrew/opt/protobuf/include,
+					/opt/homebrew/opt/gdal/include,
+					/opt/homebrew/opt/zlib/include,
 					"/opt/local/include/**",
-					"/opt/homebrew/Cellar/libosmium/**",
+					/opt/homebrew/opt/libosmium/include,
+					"/opt/homebrew/opt/osrm-backend/include/**",
+					/opt/homebrew/opt/boost/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
-					"/opt/homebrew/Cellar/bzip2/1.0.8/lib/**",
-					"/opt/homebrew/Cellar/protobuf/21.12/lib/**",
-					"/opt/homebrew/Cellar/gdal/3.6.3/lib/**",
+					/opt/homebrew/opt/bzip2/lib,
+					/opt/homebrew/opt/protobuf/lib,
+					/opt/homebrew/opt/gdal/lib,
+					"/opt/homebrew/opt/osrm-backend/lib",
+					/opt/homebrew/opt/boost/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
