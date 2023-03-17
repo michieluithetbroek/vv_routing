@@ -13,7 +13,6 @@
 
 class InitOSRM
 {
-    
     std::vector<Node> d_nodes;
     
 public:

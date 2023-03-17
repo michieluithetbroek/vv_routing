@@ -14,6 +14,7 @@
 		CCE14B1D29BE49A500128DCD /* print_nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1C29BE49A500128DCD /* print_nodes.cpp */; };
 		CCE14B2129BF8A8200128DCD /* print_nodes_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */; };
 		CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */; };
+		CCE14B2A29C4E9B200128DCD /* read_nodes_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 		CCE14B2429C4A7FC00128DCD /* initOSRM.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.h; sourceTree = "<group>"; };
 		CCE14B2629C4A83400128DCD /* initOSRM.ih */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.ih; sourceTree = "<group>"; };
 		CCE14B2829C4AA9500128DCD /* node.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = node.h; sourceTree = "<group>"; };
+		CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = read_nodes_csv.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */,
 				CCE14B2429C4A7FC00128DCD /* initOSRM.h */,
 				CCE14B2629C4A83400128DCD /* initOSRM.ih */,
+				CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */,
 			);
 			path = initOSRM;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 			files = (
 				CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */,
 				CC3CB0B129BE2977005C3C60 /* main.cpp in Sources */,
+				CCE14B2A29C4E9B200128DCD /* read_nodes_csv.cpp in Sources */,
 				CCE14B1729BE3DB900128DCD /* initOSM.cpp in Sources */,
 				CCE14B2129BF8A8200128DCD /* print_nodes_csv.cpp in Sources */,
 				CCE14B1B29BE47BB00128DCD /* nodes_make_unique.cpp in Sources */,
@@ -246,6 +250,11 @@
 					"-lz",
 					"-lprotobuf",
 					"-lgdal",
+					"-lboost_filesystem",
+					"-lboost_iostreams",
+					"-lpthread",
+					"-lboost_thread-mt",
+					"-losrm",
 				);
 				SDKROOT = macosx;
 			};
@@ -307,6 +316,11 @@
 					"-lz",
 					"-lprotobuf",
 					"-lgdal",
+					"-lboost_filesystem",
+					"-lboost_iostreams",
+					"-lpthread",
+					"-lboost_thread-mt",
+					"-losrm",
 				);
 				SDKROOT = macosx;
 			};
@@ -324,15 +338,15 @@
 					/opt/homebrew/opt/zlib/include,
 					"/opt/local/include/**",
 					/opt/homebrew/opt/libosmium/include,
-					"/opt/homebrew/opt/osrm-backend/include/**",
+					"/opt/homebrew/Cellar/osrm-backend/5.27.1_1/include/**",
 					/opt/homebrew/opt/boost/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/opt/homebrew/opt/bzip2/lib,
 					/opt/homebrew/opt/protobuf/lib,
 					/opt/homebrew/opt/gdal/lib,
-					"/opt/homebrew/opt/osrm-backend/lib",
 					/opt/homebrew/opt/boost/lib,
+					"/opt/homebrew/Cellar/osrm-backend/5.27.1_1/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -350,15 +364,15 @@
 					/opt/homebrew/opt/zlib/include,
 					"/opt/local/include/**",
 					/opt/homebrew/opt/libosmium/include,
-					"/opt/homebrew/opt/osrm-backend/include/**",
+					"/opt/homebrew/Cellar/osrm-backend/5.27.1_1/include/**",
 					/opt/homebrew/opt/boost/include,
 				);
 				LIBRARY_SEARCH_PATHS = (
 					/opt/homebrew/opt/bzip2/lib,
 					/opt/homebrew/opt/protobuf/lib,
 					/opt/homebrew/opt/gdal/lib,
-					"/opt/homebrew/opt/osrm-backend/lib",
 					/opt/homebrew/opt/boost/lib,
+					"/opt/homebrew/Cellar/osrm-backend/5.27.1_1/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

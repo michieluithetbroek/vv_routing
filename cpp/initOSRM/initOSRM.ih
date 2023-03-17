@@ -24,6 +24,14 @@
 #include "osrm/osrm.hpp"
 #include "osrm/status.hpp"
 
+#include <exception>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <utility>
+
 #include "initOSRM.h"
 
 using namespace std;
+using namespace osrm;
