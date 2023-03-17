@@ -8,6 +8,10 @@
 // Nodes. Nodes have a unique index (ranging from 0 to n) and describe their
 // coordinate and corresponding tile. Only nodes directly connected to a node
 // in another tile are returned.
+//
+// Nodes can be printed to the terminal and are stored into a CSV file. This
+// initial processing step is only required once and can be done for the
+// entire Netherlands at once.
 
 #pragma once
 
@@ -73,6 +77,7 @@ class InitOSM
 public:
     
     InitOSM(std::string const fileName = "/Users/michiel/Dropbox/programming/OSM_data/Groningen/groningen-latest.osm.pbf");
+    //InitOSM(std::string const fileName = "/Users/michiel/Dropbox/programming/OSM_data/netherlands-latest.osm.pbf");
     
     void print_nodes() const;
     void print_nodes_csv() const;

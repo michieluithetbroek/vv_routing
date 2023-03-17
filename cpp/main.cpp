@@ -8,12 +8,12 @@
 #include <iostream>
 
 #include "./initOSM/initOSM.h"
+#include "./initOSRM/initOSRM.h"
 
 int main(int argc, const char * argv[])
 {
-    InitOSM doei;
+    InitOSRM doei;
     
-    doei.print_nodes();
+    //doei.print_nodes();
     //doei.print_nodes_csv();
-    
 }

@@ -13,6 +13,7 @@
 		CCE14B1B29BE47BB00128DCD /* nodes_make_unique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */; };
 		CCE14B1D29BE49A500128DCD /* print_nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1C29BE49A500128DCD /* print_nodes.cpp */; };
 		CCE14B2129BF8A8200128DCD /* print_nodes_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */; };
+		CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,9 @@
 		CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = nodes_make_unique.cpp; sourceTree = "<group>"; };
 		CCE14B1C29BE49A500128DCD /* print_nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_nodes.cpp; sourceTree = "<group>"; };
 		CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_nodes_csv.cpp; sourceTree = "<group>"; };
+		CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initOSRM.cpp; sourceTree = "<group>"; };
+		CCE14B2429C4A7FC00128DCD /* initOSRM.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.h; sourceTree = "<group>"; };
+		CCE14B2629C4A83400128DCD /* initOSRM.ih */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.ih; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 		CC3CB0AF29BE2977005C3C60 /* cpp */ = {
 			isa = PBXGroup;
 			children = (
+				CCE14B2229C4A7E100128DCD /* initOSRM */,
 				CC3CB0B729BE2BFD005C3C60 /* initOSM */,
 				CC3CB0B029BE2977005C3C60 /* main.cpp */,
 			);
@@ -87,6 +92,16 @@
 				CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */,
 			);
 			path = initOSM;
+			sourceTree = "<group>";
+		};
+		CCE14B2229C4A7E100128DCD /* initOSRM */ = {
+			isa = PBXGroup;
+			children = (
+				CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */,
+				CCE14B2429C4A7FC00128DCD /* initOSRM.h */,
+				CCE14B2629C4A83400128DCD /* initOSRM.ih */,
+			);
+			path = initOSRM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */,
 				CC3CB0B129BE2977005C3C60 /* main.cpp in Sources */,
 				CCE14B1729BE3DB900128DCD /* initOSM.cpp in Sources */,
 				CCE14B2129BF8A8200128DCD /* print_nodes_csv.cpp in Sources */,
@@ -291,18 +307,18 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					/opt/homebrew/Cellar/expat/2.4.7/include,
-					/opt/homebrew/Cellar/bzip2/1.0.8/include,
-					/opt/homebrew/Cellar/protobuf/3.19.4/include,
-					/opt/homebrew/Cellar/gdal/3.4.3_1/include,
-					/opt/homebrew/Cellar/zlib/1.2.12/include,
-					/opt/local/include,
-					"/opt/homebrew/Cellar/libosmium/2.18.0/**",
+					"/opt/homebrew/Cellar/expat/**",
+					"/opt/homebrew/Cellar/bzip2/**",
+					"/opt/homebrew/Cellar/protobuf/**",
+					"/opt/homebrew/Cellar/gdal/**",
+					"/opt/homebrew/Cellar/zlib/**",
+					"/opt/local/include/**",
+					"/opt/homebrew/Cellar/libosmium/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"/opt/homebrew/Cellar/bzip2/1.0.8/lib/**",
-					"/opt/homebrew/Cellar/protobuf/3.19.4/lib/**",
-					"/opt/homebrew/Cellar/gdal/3.4.3_1/lib/**",
+					"/opt/homebrew/Cellar/protobuf/21.12/lib/**",
+					"/opt/homebrew/Cellar/gdal/3.6.3/lib/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -313,18 +329,18 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				HEADER_SEARCH_PATHS = (
-					/opt/homebrew/Cellar/expat/2.4.7/include,
-					/opt/homebrew/Cellar/bzip2/1.0.8/include,
-					/opt/homebrew/Cellar/protobuf/3.19.4/include,
-					/opt/homebrew/Cellar/gdal/3.4.3_1/include,
-					/opt/homebrew/Cellar/zlib/1.2.12/include,
-					/opt/local/include,
-					"/opt/homebrew/Cellar/libosmium/2.18.0/**",
+					"/opt/homebrew/Cellar/expat/**",
+					"/opt/homebrew/Cellar/bzip2/**",
+					"/opt/homebrew/Cellar/protobuf/**",
+					"/opt/homebrew/Cellar/gdal/**",
+					"/opt/homebrew/Cellar/zlib/**",
+					"/opt/local/include/**",
+					"/opt/homebrew/Cellar/libosmium/**",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"/opt/homebrew/Cellar/bzip2/1.0.8/lib/**",
-					"/opt/homebrew/Cellar/protobuf/3.19.4/lib/**",
-					"/opt/homebrew/Cellar/gdal/3.4.3_1/lib/**",
+					"/opt/homebrew/Cellar/protobuf/21.12/lib/**",
+					"/opt/homebrew/Cellar/gdal/3.6.3/lib/**",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
