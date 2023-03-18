@@ -42,7 +42,7 @@ struct Entry
 
 InitOSRM::InitOSRM()
 {
-    int const radius = 2;
+    int const radius = 4;
     
     read_nodes_csv();
     
@@ -62,9 +62,10 @@ InitOSRM::InitOSRM()
     
     // Compute distances
     
-    // radius 0: 14 seconds, 15.361 nodes, 183 redundant, 363.609 arcs (XX),
-    // radius 1: 143 seconds, 2730000 arcs
-    // radius 2: 
+    // radius 0:  14 seconds, 15.361 nodes, 183 redundant, 363.609 arcs (XX),
+    // radius 1: 143 seconds, 15.361 nodes, 2.730.000 arcs
+    // radius 2: 643 seconds, 15.361 nodes2, 6.439.572 arcs
+    // radius 4:
     
     
     
@@ -146,7 +147,7 @@ InitOSRM::InitOSRM()
     
     int cnt = 0;
     
-    #pragma omp parallel for
+    //#pragma omp parallel for
     
     for (size_t idx_node1 = 0; idx_node1 < nNodes; ++idx_node1)
     {
@@ -167,60 +168,60 @@ InitOSRM::InitOSRM()
             if (cnt % 10000 == 0)
                 cout << "-------" << cnt << "\n\n";
             
-            osrm::RouteParameters params;
-            
-            params.coordinates.push_back({util::FloatLongitude{node1.lon}, util::FloatLatitude{node1.lat}});
-            params.coordinates.push_back({util::FloatLongitude{node2.lon}, util::FloatLatitude{node2.lat}});
-            
-            engine::api::ResultT result = json::Object();
-            
-            auto const status = osrm.Route(params, result);
-            auto &json_result = result.get<json::Object>();
-            
-            if (status == Status::Ok)
-            {
-                auto &routes = json_result.values["routes"].get<json::Array>();
-                
-                // Let's just use the first route
-                auto &route = routes.values[0].get<json::Object>();
-                
-                double const distance = route.values["distance"].get<json::Number>().value;
-                double const duration = route.values["duration"].get<json::Number>().value;
-                
-                #pragma omp critical
-                {
-                    entries.emplace_back(node1.idx_node, node2.idx_node,
-                                         node1.tile_x, node1.tile_y,
-                                         node2.tile_x, node2.tile_y,
-                                         distance, duration);
-                }
-                
-                // Warn users if extract does not contain the default coordinates from above
-//                if (distance == 0 || duration == 0)
-//                {
-//                    cout << node1.idx_node << " " << node1.lon << " " << node1.lat << endl
-//                         << node2.idx_node << " " << node2.lon << " " << node2.lat << endl;
+//            osrm::RouteParameters params;
 //
-//                    std::cout << "Note: distance or duration is zero. ";
-//                    std::cout << "You are probably doing a query outside of the OSM extract.\n\n";
+//            params.coordinates.push_back({util::FloatLongitude{node1.lon}, util::FloatLatitude{node1.lat}});
+//            params.coordinates.push_back({util::FloatLongitude{node2.lon}, util::FloatLatitude{node2.lat}});
+//
+//            engine::api::ResultT result = json::Object();
+//
+//            auto const status = osrm.Route(params, result);
+//            auto &json_result = result.get<json::Object>();
+//
+//            if (status == Status::Ok)
+//            {
+//                auto &routes = json_result.values["routes"].get<json::Array>();
+//
+//                // Let's just use the first route
+//                auto &route = routes.values[0].get<json::Object>();
+//
+//                double const distance = route.values["distance"].get<json::Number>().value;
+//                double const duration = route.values["duration"].get<json::Number>().value;
+//
+//                #pragma omp critical
+//                {
+//                    entries.emplace_back(node1.idx_node, node2.idx_node,
+//                                         node1.tile_x, node1.tile_y,
+//                                         node2.tile_x, node2.tile_y,
+//                                         distance, duration);
 //                }
-                
-//                std::cout << "Distance: " << distance << " meter\n";
-//                std::cout << "Duration: " << duration << " seconds\n";
-                
-                //        return EXIT_SUCCESS;
-            }
-            
-            else if (status == Status::Error)
-            {
-                const auto code = json_result.values["code"].get<json::String>().value;
-                const auto message = json_result.values["message"].get<json::String>().value;
-                
-                std::cout << "Code: " << code << "\n";
-                std::cout << "Message: " << code << "\n";
-                
-                //        return EXIT_FAILURE;
-            }
+//
+//                // Warn users if extract does not contain the default coordinates from above
+////                if (distance == 0 || duration == 0)
+////                {
+////                    cout << node1.idx_node << " " << node1.lon << " " << node1.lat << endl
+////                         << node2.idx_node << " " << node2.lon << " " << node2.lat << endl;
+////
+////                    std::cout << "Note: distance or duration is zero. ";
+////                    std::cout << "You are probably doing a query outside of the OSM extract.\n\n";
+////                }
+//
+////                std::cout << "Distance: " << distance << " meter\n";
+////                std::cout << "Duration: " << duration << " seconds\n";
+//
+//                //        return EXIT_SUCCESS;
+//            }
+//
+//            else if (status == Status::Error)
+//            {
+//                const auto code = json_result.values["code"].get<json::String>().value;
+//                const auto message = json_result.values["message"].get<json::String>().value;
+//
+//                std::cout << "Code: " << code << "\n";
+//                std::cout << "Message: " << code << "\n";
+//
+//                //        return EXIT_FAILURE;
+//            }
         }
     }
     
