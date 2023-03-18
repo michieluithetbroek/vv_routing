@@ -9,13 +9,16 @@
 
 #include "./initOSM/initOSM.h"
 #include "./initOSRM/initOSRM.h"
+#include "./solver_GTSP/solver_GTSP.h"
 
 int main(int argc, const char * argv[])
 {
-//    InitOSM doei;
-//
-//    doei.print_nodes();
-//    doei.print_nodes_csv();
+//    InitOSM initOSM;
+//    initOSM.print_nodes();
+//    initOSM.print_nodes_csv();
     
-    InitOSRM step2;
+//    InitOSRM initOSRM;
+//    initOSRM.print_arcs_csv();
+    
+    Solver_GTSP solver;
 }

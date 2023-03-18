@@ -1,0 +1,10 @@
+//
+//  solver_GTSP.ih.h
+//  vv_routing
+//
+//  Created by Michiel uit het Broek on 18/03/2023.
+//
+
+#pragma once
+
+#include "./solver_GTSP.h"
