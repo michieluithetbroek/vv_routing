@@ -22,5 +22,5 @@ public:
     
 private:
     
-    
+    void read_nodes (int const tile_x, int const tile_y, int const threshold);
 };
