@@ -9,21 +9,13 @@
 
 #include "initOSRM.ih"
 
-// Entry of the directed distance matrix
-
-
-
-
-
 InitOSRM::InitOSRM()
 {
     int const radius = 4;
     
     read_nodes_csv();
     
-    vector<Arc> entries;
-    
-    entries.reserve(2000000);
+    d_arcs.reserve(2000000);
     
     // Create OSRM object
     osrm::EngineConfig config;
@@ -92,7 +84,7 @@ InitOSRM::InitOSRM()
 //
 //                #pragma omp critical
 //                {
-//                    entries.emplace_back(node1.idx_node, node2.idx_node,
+//                    d_arcs.emplace_back(node1.idx_node, node2.idx_node,
 //                                         node1.tile_x, node1.tile_y,
 //                                         node2.tile_x, node2.tile_y,
 //                                         distance, duration);
@@ -147,17 +139,17 @@ InitOSRM::InitOSRM()
     //                 << setw(10) << d_nodes[entry.idx_to].lat << endl << endl;
     //        }
     
-    for (Arc const &entry: entries)
-        cnt2 += (entry.distance <= 0);
+    for (Arc const &arc: d_arcs)
+        cnt2 += (arc.distance <= 0);
     
-    for (Arc const &entry: entries)
-        cnt3 += (entry.distance <= 1);
+    for (Arc const &arc: d_arcs)
+        cnt3 += (arc.distance <= 1);
     
-    for (Arc const &entry: entries)
-        cnt4 += (entry.distance <= 5);
+    for (Arc const &arc: d_arcs)
+        cnt4 += (arc.distance <= 5);
     
-    for (Arc const &entry: entries)
-        cnt5 += (entry.distance <= 10);
+    for (Arc const &arc: d_arcs)
+        cnt5 += (arc.distance <= 10);
     
     cout << "counter = " << cnt2 << endl;
     cout << "counter = " << cnt3 << endl;

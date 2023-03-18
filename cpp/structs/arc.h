@@ -6,7 +6,7 @@
 //
 // Arc that describes the distance between two nodes. This arc is
 // computed using the shorest path function of OSRM. Distances are
-// stored with arcs because a entire distance matrix would be much
+// stored with arcs because an entire distance matrix would be much
 // too expensive to compute.
 
 #pragma once

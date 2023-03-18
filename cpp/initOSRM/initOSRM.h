@@ -15,6 +15,7 @@
 class InitOSRM
 {
     std::vector<Node> d_nodes;
+    std::vector<Arc>  d_arcs;
     
 public:
     
