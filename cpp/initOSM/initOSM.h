@@ -29,8 +29,8 @@ public:
     InitOSM(std::string const fileName = "/Users/michiel/Dropbox/programming/OSM_data/Groningen/groningen-latest.osm.pbf");
     //InitOSM(std::string const fileName = "/Users/michiel/Dropbox/programming/OSM_data/netherlands-latest.osm.pbf");
     
-    void print_nodes() const;
     void print_nodes_csv() const;
+    void print_nodes_terminal() const;
     
 private:
     

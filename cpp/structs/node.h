@@ -8,6 +8,7 @@
 #pragma once
 
 #include <string>
+#include <iomanip>
 
 struct Node
 {
@@ -57,5 +58,20 @@ struct Node
     bool operator==(Node const &other) const
     {
         return idx_node == other.idx_node;
+    };
+    
+    friend std::ostream & operator<<(std::ostream &os, Node const &n)
+    {
+        os << std::fixed << std::setprecision(6)
+           << std::setw(15) << n.idx_way      << ' '
+           << std::setw(10) << n.idx_node_OSM << ' '
+           << std::setw(10) << n.idx_node     << ' '
+           << std::setw(15) << n.lon          << ' '
+           << std::setw(15) << n.lat          << ' '
+           << std::setw(10) << n.tile_x       << ' '
+           << std::setw(10) << n.tile_y       << ' '
+           << std::setw(20) << n.way_type     << '\n';
+        
+        return os;
     };
 };

@@ -11,7 +11,7 @@
 		CCE14B1729BE3DB900128DCD /* initOSM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CC3CB0B929BE2FB1005C3C60 /* initOSM.cpp */; };
 		CCE14B1929BE470600128DCD /* nodes_reindex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1829BE46CA00128DCD /* nodes_reindex.cpp */; };
 		CCE14B1B29BE47BB00128DCD /* nodes_make_unique.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */; };
-		CCE14B1D29BE49A500128DCD /* print_nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1C29BE49A500128DCD /* print_nodes.cpp */; };
+		CCE14B1D29BE49A500128DCD /* print_nodes_terminal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B1C29BE49A500128DCD /* print_nodes_terminal.cpp */; };
 		CCE14B2129BF8A8200128DCD /* print_nodes_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */; };
 		CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */; };
 		CCE14B2A29C4E9B200128DCD /* read_nodes_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */; };
@@ -40,7 +40,7 @@
 		CC3CB0BA29BE2FD4005C3C60 /* initOSM.ih */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSM.ih; sourceTree = "<group>"; };
 		CCE14B1829BE46CA00128DCD /* nodes_reindex.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = nodes_reindex.cpp; sourceTree = "<group>"; };
 		CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = nodes_make_unique.cpp; sourceTree = "<group>"; };
-		CCE14B1C29BE49A500128DCD /* print_nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_nodes.cpp; sourceTree = "<group>"; };
+		CCE14B1C29BE49A500128DCD /* print_nodes_terminal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_nodes_terminal.cpp; sourceTree = "<group>"; };
 		CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_nodes_csv.cpp; sourceTree = "<group>"; };
 		CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = initOSRM.cpp; sourceTree = "<group>"; };
 		CCE14B2429C4A7FC00128DCD /* initOSRM.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = initOSRM.h; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				CC3CB0BA29BE2FD4005C3C60 /* initOSM.ih */,
 				CCE14B1829BE46CA00128DCD /* nodes_reindex.cpp */,
 				CCE14B1A29BE47BB00128DCD /* nodes_make_unique.cpp */,
-				CCE14B1C29BE49A500128DCD /* print_nodes.cpp */,
+				CCE14B1C29BE49A500128DCD /* print_nodes_terminal.cpp */,
 				CCE14B2029BF8A8200128DCD /* print_nodes_csv.cpp */,
 			);
 			path = initOSM;
@@ -194,7 +194,7 @@
 				CCE14B1729BE3DB900128DCD /* initOSM.cpp in Sources */,
 				CCE14B2129BF8A8200128DCD /* print_nodes_csv.cpp in Sources */,
 				CCE14B1B29BE47BB00128DCD /* nodes_make_unique.cpp in Sources */,
-				CCE14B1D29BE49A500128DCD /* print_nodes.cpp in Sources */,
+				CCE14B1D29BE49A500128DCD /* print_nodes_terminal.cpp in Sources */,
 				CCE14B1929BE470600128DCD /* nodes_reindex.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
