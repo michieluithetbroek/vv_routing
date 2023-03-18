@@ -21,5 +21,7 @@ public:
     
 private:
     void read_nodes_csv();
+    
+    void remove_redundant_nodes(int const threshold = 0);
 
 };
