@@ -23,4 +23,5 @@ public:
 private:
     
     void read_nodes (int const tile_x, int const tile_y, int const threshold);
+    void read_arcs  (int const in_tile_x, int const in_tile_y, int const threshold);
 };

@@ -9,5 +9,6 @@
 
 Solver_GTSP::Solver_GTSP()
 {
-    read_nodes(8515, 5340, 1);
+    read_nodes (8515, 5340, 1);
+    read_arcs  (8515, 5340, 1);
 }

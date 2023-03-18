@@ -20,6 +20,7 @@
 		CCE14B3129C5B38900128DCD /* print_arcs_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B3029C5B38900128DCD /* print_arcs_csv.cpp */; };
 		CCE14B3529C5CA8D00128DCD /* solver_GTSP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B3329C5CA8D00128DCD /* solver_GTSP.cpp */; };
 		CCE14B3829C5CCE400128DCD /* read_nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B3729C5CCE400128DCD /* read_nodes.cpp */; };
+		CCE14B3A29C5D19D00128DCD /* read_arcs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B3929C5D19D00128DCD /* read_arcs.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,7 @@
 		CCE14B3429C5CA8D00128DCD /* solver_GTSP.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = solver_GTSP.h; sourceTree = "<group>"; };
 		CCE14B3629C5CA9F00128DCD /* solver_GTSP.ih */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = solver_GTSP.ih; sourceTree = "<group>"; };
 		CCE14B3729C5CCE400128DCD /* read_nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = read_nodes.cpp; sourceTree = "<group>"; };
+		CCE14B3929C5D19D00128DCD /* read_arcs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = read_arcs.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				CCE14B3429C5CA8D00128DCD /* solver_GTSP.h */,
 				CCE14B3629C5CA9F00128DCD /* solver_GTSP.ih */,
 				CCE14B3729C5CCE400128DCD /* read_nodes.cpp */,
+				CCE14B3929C5D19D00128DCD /* read_arcs.cpp */,
 			);
 			path = solver_GTSP;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				CCE14B2F29C5AD8700128DCD /* print_arcs_terminal.cpp in Sources */,
 				CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */,
 				CCE14B2C29C5A62E00128DCD /* remove_redundant_nodes.cpp in Sources */,
+				CCE14B3A29C5D19D00128DCD /* read_arcs.cpp in Sources */,
 				CCE14B3529C5CA8D00128DCD /* solver_GTSP.cpp in Sources */,
 				CC3CB0B129BE2977005C3C60 /* main.cpp in Sources */,
 				CCE14B3829C5CCE400128DCD /* read_nodes.cpp in Sources */,

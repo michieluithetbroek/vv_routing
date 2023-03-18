@@ -65,7 +65,6 @@ void Solver_GTSP::read_nodes(int const in_tile_x, int const in_tile_y, int const
     
     d_nodes.shrink_to_fit();
     
-    
     cout << "Read " <<  d_nodes.size() << " nodes for\n"
          << "  x: " << inst_tile_x1 << " " << inst_tile_x2 << '\n'
          << "  y: " << inst_tile_y1 << " " << inst_tile_y2 << endl;
