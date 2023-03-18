@@ -46,6 +46,17 @@ struct Arc
       time        (time)
     { };
     
+    bool operator<(Arc const &arc2) const
+    {
+      if (idx_from < arc2.idx_from)
+          return true;
+   
+      if (idx_from == arc2.idx_from and idx_to < arc2.idx_to)
+          return true;
+
+      return false;
+    };
+    
     friend std::ostream & operator<<(std::ostream &os, Arc const &arc)
     {
         os << std::fixed << std::setprecision(1)
