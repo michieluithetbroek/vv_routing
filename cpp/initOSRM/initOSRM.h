@@ -21,6 +21,9 @@ public:
     
     InitOSRM();
     
+    void print_arcs_csv() const;
+    void print_arcs_terminal() const;
+    
 private:
     void read_nodes_csv();
     

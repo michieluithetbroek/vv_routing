@@ -8,8 +8,15 @@
 // computed using the shorest path function of OSRM. Distances are
 // stored with arcs because an entire distance matrix would be much
 // too expensive to compute.
+//
+// TODO Should this struct also handle reading a file of Arcs? Maybe
+// we can create a struct Arcs that is a vector<Arc> which only adds
+// the functionallity of reading/printing the data from/to a file
 
 #pragma once
+
+#include <ostream>
+#include <iomanip>
 
 struct Arc
 {
@@ -38,4 +45,20 @@ struct Arc
       distance    (distance),
       time        (time)
     { };
+    
+    friend std::ostream & operator<<(std::ostream &os, Arc const &arc)
+    {
+        os << std::fixed << std::setprecision(1)
+        
+           << std::setw(10) << arc.idx_from    << ' '
+           << std::setw(10) << arc.idx_to      << ' '
+           << std::setw(6)  << arc.tile_x_from << ' '
+           << std::setw(6)  << arc.tile_y_from << ' '
+           << std::setw(6)  << arc.tile_x_to   << ' '
+           << std::setw(6)  << arc.tile_y_to   << ' '
+           << std::setw(10) << arc.distance    << ' '
+           << std::setw(10) << arc.time        << '\n';
+        
+        return os;
+    };
 };

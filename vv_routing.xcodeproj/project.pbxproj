@@ -16,6 +16,8 @@
 		CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2329C4A7FC00128DCD /* initOSRM.cpp */; };
 		CCE14B2A29C4E9B200128DCD /* read_nodes_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */; };
 		CCE14B2C29C5A62E00128DCD /* remove_redundant_nodes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2B29C5A62E00128DCD /* remove_redundant_nodes.cpp */; };
+		CCE14B2F29C5AD8700128DCD /* print_arcs_terminal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B2E29C5AD8700128DCD /* print_arcs_terminal.cpp */; };
+		CCE14B3129C5B38900128DCD /* print_arcs_csv.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CCE14B3029C5B38900128DCD /* print_arcs_csv.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = read_nodes_csv.cpp; sourceTree = "<group>"; };
 		CCE14B2B29C5A62E00128DCD /* remove_redundant_nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = remove_redundant_nodes.cpp; sourceTree = "<group>"; };
 		CCE14B2D29C5A8A100128DCD /* arc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arc.h; sourceTree = "<group>"; };
+		CCE14B2E29C5AD8700128DCD /* print_arcs_terminal.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_arcs_terminal.cpp; sourceTree = "<group>"; };
+		CCE14B3029C5B38900128DCD /* print_arcs_csv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = print_arcs_csv.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				CCE14B2629C4A83400128DCD /* initOSRM.ih */,
 				CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */,
 				CCE14B2B29C5A62E00128DCD /* remove_redundant_nodes.cpp */,
+				CCE14B2E29C5AD8700128DCD /* print_arcs_terminal.cpp */,
+				CCE14B3029C5B38900128DCD /* print_arcs_csv.cpp */,
 			);
 			path = initOSRM;
 			sourceTree = "<group>";
@@ -179,6 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE14B3129C5B38900128DCD /* print_arcs_csv.cpp in Sources */,
+				CCE14B2F29C5AD8700128DCD /* print_arcs_terminal.cpp in Sources */,
 				CCE14B2529C4A7FC00128DCD /* initOSRM.cpp in Sources */,
 				CCE14B2C29C5A62E00128DCD /* remove_redundant_nodes.cpp in Sources */,
 				CC3CB0B129BE2977005C3C60 /* main.cpp in Sources */,
