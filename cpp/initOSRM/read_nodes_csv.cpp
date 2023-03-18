@@ -19,10 +19,10 @@ void InitOSRM::read_nodes_csv()
     if (!input_file.is_open())
         throw string("Input file not found");
     
-    size_t idx_node; // Own node index (ranging from 0 to n)
+    size_t idx_node;
     size_t idx_way;
 
-    unsigned long long idx_node_OSM; // Index as used in OSM
+    unsigned long long idx_node_OSM;
 
     double lon;
     double lat;
@@ -31,16 +31,25 @@ void InitOSRM::read_nodes_csv()
     int tile_y;
 
     std::string way_type;
-        
-    while (input_file >> idx_node
-                      >> idx_way
-                      >> idx_node_OSM
-                      >> lon
-                      >> lat
-                      >> tile_x
-                      >> tile_y
-                      >> way_type)
+    
+    // skip first line
+    getline(input_file, way_type);
+    
+    string line;
+    
+    while (getline(input_file, line))
     {
+        stringstream ss(line);
+        
+        ss >> idx_way
+           >> idx_node_OSM
+           >> idx_node
+           >> lon
+           >> lat
+           >> tile_x
+           >> tile_y
+           >> way_type;
+        
         d_nodes.emplace_back(idx_node, idx_way, idx_node_OSM, lon, lat, tile_x, tile_y, way_type);
     }
     
