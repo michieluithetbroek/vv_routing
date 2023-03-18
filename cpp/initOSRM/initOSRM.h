@@ -10,6 +10,7 @@
 #include <vector>
 
 #include "./../structs/node.h"
+#include "./../structs/arc.h"
 
 class InitOSRM
 {

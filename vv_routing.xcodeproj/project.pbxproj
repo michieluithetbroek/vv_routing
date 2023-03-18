@@ -46,6 +46,7 @@
 		CCE14B2829C4AA9500128DCD /* node.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; path = node.h; sourceTree = "<group>"; };
 		CCE14B2929C4E9B200128DCD /* read_nodes_csv.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = read_nodes_csv.cpp; sourceTree = "<group>"; };
 		CCE14B2B29C5A62E00128DCD /* remove_redundant_nodes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = remove_redundant_nodes.cpp; sourceTree = "<group>"; };
+		CCE14B2D29C5A8A100128DCD /* arc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = arc.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE14B2829C4AA9500128DCD /* node.h */,
+				CCE14B2D29C5A8A100128DCD /* arc.h */,
 			);
 			path = structs;
 			sourceTree = "<group>";

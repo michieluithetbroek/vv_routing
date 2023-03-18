@@ -4,39 +4,14 @@
 //
 //  Created by Michiel uit het Broek on 17/03/2023.
 //
+// TODO
+// - Can the OSRM solver be a class member?
 
 #include "initOSRM.ih"
 
 // Entry of the directed distance matrix
 
-struct Entry
-{
-    size_t idx_from;
-    size_t idx_to;
-    
-    int tile_x_from;
-    int tile_y_from;
-    int tile_x_to;
-    int tile_y_to;
-    
-    double distance;
-    double time;
-    
-    Entry(size_t idx_from, size_t idx_to,
-          int tile_x_from, int tile_y_from,
-          int tile_x_to,   int tile_y_to,
-          double distance, double time)
-    :
-      idx_from    (idx_from),
-      idx_to      (idx_to),
-      tile_x_from (tile_x_from),
-      tile_y_from (tile_y_from),
-      tile_x_to   (tile_x_to),
-      tile_y_to   (tile_y_to),
-      distance    (distance),
-      time        (time)
-    { };
-};
+
 
 
 
@@ -46,7 +21,7 @@ InitOSRM::InitOSRM()
     
     read_nodes_csv();
     
-    vector<Entry> entries;
+    vector<Arc> entries;
     
     entries.reserve(2000000);
     
@@ -172,16 +147,16 @@ InitOSRM::InitOSRM()
     //                 << setw(10) << d_nodes[entry.idx_to].lat << endl << endl;
     //        }
     
-    for (Entry const &entry: entries)
+    for (Arc const &entry: entries)
         cnt2 += (entry.distance <= 0);
     
-    for (Entry const &entry: entries)
+    for (Arc const &entry: entries)
         cnt3 += (entry.distance <= 1);
     
-    for (Entry const &entry: entries)
+    for (Arc const &entry: entries)
         cnt4 += (entry.distance <= 5);
     
-    for (Entry const &entry: entries)
+    for (Arc const &entry: entries)
         cnt5 += (entry.distance <= 10);
     
     cout << "counter = " << cnt2 << endl;
