@@ -4,7 +4,8 @@
 //
 //  Created by Michiel uit het Broek on 12/03/2023.
 //
-// Remove duplicate nodes
+// In OSM, nodes can be part of multiple ways. As a result
+// we may have duplicate nodes which we delete here.
 
 #include "initOSM.ih"
 

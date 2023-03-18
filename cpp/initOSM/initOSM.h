@@ -12,6 +12,10 @@
 // Nodes can be printed to the terminal and are stored into a CSV file. This
 // initial processing step is only required once and can be done for the
 // entire Netherlands at once.
+//
+// Nodes are indexed such that all nodes in a tile have consecutive indices.
+// For instance, node 1-8 can belong to tile 1 and node 9-15 to tile 2. Within
+// a tile, nodes are ordered from bottom to top and from left to right.
 
 #pragma once
 

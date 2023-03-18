@@ -15,7 +15,7 @@ struct Node
     size_t idx_node; // Own node index (ranging from 0 to n)
     size_t idx_way;
     
-    unsigned long long idx_node_OSM; // Index as used in OSM
+    unsigned long long idx_node_OSM; // Index as used in OSM. TODO remove?
     
     double lon;
     double lat;
@@ -48,12 +48,32 @@ struct Node
       way_type     (way_type)
     { }
     
-    // Allow to compare nodes on their index
+    // Nodes are sorted such that all nodes in a tile have consecutive indices.
+    // For instance, node 1-8 can belong to tile 1 and node 9-15 to tile 2. Within
+    // a tile, nodes are ordered from bottom to top and from left to right.
     
-    bool operator<(Node const &other) const
+    bool operator<(Node const &node2) const
     {
-        return idx_node < other.idx_node;
+      if (tile_y < node2.tile_y)
+          return true;
+   
+      if (tile_y == node2.tile_y and tile_x < node2.tile_x)
+          return true;
+   
+      if (tile_y == node2.tile_y and tile_x == node2.tile_x)
+      {
+          if (lat < node2.lat)
+              return true;
+          
+          if (lat == node2.lat and lon < node2.lon)
+              return true;
+          
+          return false;
+      }
+
+      return false;
     };
+    
     
     bool operator==(Node const &other) const
     {
@@ -64,7 +84,7 @@ struct Node
     {
         os << std::fixed << std::setprecision(6)
            << std::setw(15) << n.idx_way      << ' '
-           << std::setw(10) << n.idx_node_OSM << ' '
+           << std::setw(15) << n.idx_node_OSM << ' '
            << std::setw(10) << n.idx_node     << ' '
            << std::setw(15) << n.lon          << ' '
            << std::setw(15) << n.lat          << ' '
